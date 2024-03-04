@@ -1,5 +1,4 @@
-package dennisMohle.myZoo.com;
-
+//Using your files. Don't fix what ain't broke.
 public class Animal {
 
     // Animal Class attributes
@@ -51,5 +50,36 @@ public class Animal {
         this.species = species;
     }
 
+}
+
+ class Hyena extends Animal{
+
+    public static void sound() {
+        System.out.println("Hyena laughing"); // just an animal noise
+    }
+
+}
+
+class Lion extends Animal{
+
+    public static void sound() {
+        System.out.println("Lion roaring");// just an animal noise
+    }
+
+}
+
+class Tiger extends Animal{
+
+    public static void sound() {
+        System.out.println("Tiger growling");// just an animal noise
+    }
+
+}
+
+class Bear extends Animal{
+
+    public static void sound() {
+        System.out.println("Bear growling");
+    }// just an animal noise
 
 }

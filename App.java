@@ -1,9 +1,13 @@
-package dennisMohle.myZoo.com;
-
 import java.io.File;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+//Using your files. Don't fix what ain't broke.
 
 public class App {
     public static void main(String[] args) {
@@ -19,48 +23,66 @@ public class App {
         ArrayList<Animal> animals = new ArrayList<>();
 
         // Open an external file, parse it line by line, and get age and species
-        String filePath = "C:/2024_Spring/midtermFiles/arrivingAnimals.txt";
+        String filePath = "/Users/angel/IdeaProjects/Java Zoo/src/arrivingAnimals.txt";
         File file = new File(filePath);
 
+
         try (Scanner scanner = new Scanner(file)) {
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
 
-                // Age is in the first element of the array named parts
-                String[] parts = line.split(", ");
+            // Age is in the first element of the array named parts
+            String[] parts = line.split(", ");
 
-                // Check if the line has at least 1 part
-                if (parts.length >= 1) {
-                    String ageAndSpecies = parts[0];
-                    System.out.println("ageAndSpecies: " + ageAndSpecies );
+            // Check if the line has at least 1 part
+            if (parts.length >= 1) {
+                String ageAndSpecies = parts[0];
+                System.out.println("ageAndSpecies: " + ageAndSpecies );
 
-                    // Get age out of 'ageAndSpecies'
-                    String[] theParts = ageAndSpecies.split(" ");
-                    for (int i=0; i<5; i++) {
-                        System.out.println("theParts[" + i + "] is " + theParts[i]);
-                    }
-                    age = Integer.parseInt(theParts[0]);
-                    species = theParts[4];
-
-                    // Create a new animal object.
-                    Animal myAnimal = new Animal("name needed", species, age);
-
-                    // Add the new Animal object to the ArrayList of Animals
-                    animals.add(myAnimal);
+                // Get age out of 'ageAndSpecies'
+                String[] theParts = ageAndSpecies.split(" ");
+                for (int i=0; i<5; i++) {
+                    System.out.println("theParts[" + i + "] is " + theParts[i]);
                 }
-                System.out.println("\n Number of animals is: " + Animal.numOfAnimals);
+                age = Integer.parseInt(theParts[0]);
+                species = theParts[4];
+
+                // Create a new animal object.
+                Animal myAnimal = new Animal("name needed", species, age);
+
+                // Add the new Animal object to the ArrayList of Animals
+                animals.add(myAnimal);
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + filePath);
+            System.out.println("\n Number of animals is: " + Animal.numOfAnimals);
+        }
+    } catch (FileNotFoundException e) {
+        System.out.println("File not found: " + filePath);
+        e.printStackTrace();
+    }
+
+        // now creating a text file named newAnimals that contains info about the animals
+        try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("newAnimals.txt")))) {
+            for (Animal animal : animals) {
+                System.out.println(animal);
+                System.out.println("Animal name: " + animal.getName() + ", Age: " + animal.getAge() + ", Species: " + animal.getSpecies());
+
+                // writes to the file
+                writer.println("Animal name: " + animal.getName() + ", Age: " + animal.getAge() + ", Species: " + animal.getSpecies());
+            }
+
+            System.out.println("\nNumber of animals is: " + Animal.numOfAnimals + "\n\n");
+
+            // writes the number of animals to the file
+            writer.println("\nNumber of animals is: " + Animal.numOfAnimals + "\n\n");
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
-        // We now have an arrayList of Animals. Let's output them!
-        for (Animal animal : animals){
-            System.out.println(animal);
-            System.out.println("Animal name: " + animal.getName() + ", Age: " + animal.getAge() + ", Species: " + animal.getSpecies());
-        }
-        System.out.println("\n Number of animals is: " + Animal.numOfAnimals);
+        Hyena.sound();
+        Bear.sound();
+        Tiger.sound();
+        Lion.sound();
 
     }
+
 }

@@ -1,0 +1,20 @@
+Animal name: name needed, Age: 4, Species: hyena
+Animal name: name needed, Age: 12, Species: hyena
+Animal name: name needed, Age: 4, Species: hyena
+Animal name: name needed, Age: 8, Species: hyena
+Animal name: name needed, Age: 6, Species: lion
+Animal name: name needed, Age: 12, Species: lion
+Animal name: name needed, Age: 22, Species: lion
+Animal name: name needed, Age: 4, Species: lion
+Animal name: name needed, Age: 2, Species: tiger
+Animal name: name needed, Age: 4, Species: tiger
+Animal name: name needed, Age: 18, Species: tiger
+Animal name: name needed, Age: 3, Species: tiger
+Animal name: name needed, Age: 7, Species: bear
+Animal name: name needed, Age: 25, Species: bear
+Animal name: name needed, Age: 4, Species: bear
+Animal name: name needed, Age: 4, Species: bear
+
+Number of animals is: 16
+
+
