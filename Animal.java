@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 //Using your files. Don't fix what ain't broke.
 public class Animal {
 
@@ -8,6 +11,7 @@ public class Animal {
 
     // Create a static attribute that belongs to the Animal class.
     public static int numOfAnimals = 0;
+    private static Map<String, Integer> speciesCount = new HashMap<>(); // best way to track Species
 
     // Animal Class constructors.
     public Animal(String name, String aSpecies, int anAge) {
@@ -18,6 +22,9 @@ public class Animal {
         species = aSpecies;
         age = anAge;
         numOfAnimals++;
+
+        speciesCount.put(species, speciesCount.getOrDefault(species, 0) + 1);
+
     }
 
     public Animal() {
@@ -50,6 +57,9 @@ public class Animal {
         this.species = species;
     }
 
+    public static int getSpeciesCount(String species) {
+        return speciesCount.getOrDefault(species, 0);
+    }
 }
 
  class Hyena extends Animal{

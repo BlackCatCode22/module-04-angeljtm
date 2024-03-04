@@ -69,11 +69,27 @@ public class App {
                 // writes to the file
                 writer.println("Animal name: " + animal.getName() + ", Age: " + animal.getAge() + ", Species: " + animal.getSpecies());
             }
-
-            System.out.println("\nNumber of animals is: " + Animal.numOfAnimals + "\n\n");
+            System.out.println();
+            System.out.println("Total number of new animals is: " + Animal.numOfAnimals);
 
             // writes the number of animals to the file
-            writer.println("\nNumber of animals is: " + Animal.numOfAnimals + "\n\n");
+            System.out.println();
+            writer.println("Total number of new animals is: " + Animal.numOfAnimals);
+
+            // now for each species
+            System.out.println("Number of Hyenas is: " + Animal.getSpeciesCount("hyena"));// Hyena
+            writer.println("Number of Hyenas is: " + Animal.getSpeciesCount("hyena"));// writes the number of animals to the file
+
+            System.out.println("Number of Tigers is: " + Animal.getSpeciesCount("tiger"));// Tiger one
+            writer.println("Number of Tigers is: " + Animal.getSpeciesCount("tiger"));// writes the number of animals to the file
+
+            System.out.println("Number of Lions is: " + Animal.getSpeciesCount("lion"));// Lion one
+            writer.println("Number of Lions is: " + Animal.getSpeciesCount("lion"));// writes the number of animals to the file
+
+            System.out.println("Number of Bears is: " + Animal.getSpeciesCount("bear") );// Bear one
+            writer.println("Number of Bears is: " + Animal.getSpeciesCount("bear"));// writes the number of animals to the file
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }

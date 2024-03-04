@@ -14,7 +14,8 @@ Animal name: name needed, Age: 7, Species: bear
 Animal name: name needed, Age: 25, Species: bear
 Animal name: name needed, Age: 4, Species: bear
 Animal name: name needed, Age: 4, Species: bear
-
-Number of animals is: 16
-
-
+Total number of new animals is: 16
+Number of Hyenas is: 4
+Number of Tigers is: 4
+Number of Lions is: 4
+Number of Bears is: 4
